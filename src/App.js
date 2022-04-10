@@ -1,18 +1,30 @@
-import React, { Component } from 'react';
-import Texto from './quests/texto';
-import Button from './quests/button';
-import './App.css';
+import React from "react";
 
+function TextUpperCase(props) {
+  return (
+    <h2 style={{ color: "red" }} align="center">
+      {props.text.toUpperCase()}
+    </h2>
+  );
+}
 
-class App extends Component {
-  render(props) {
-    return (
-      <>
-        <Texto texto ="texto desafio 1 - base react"/>
-        <Button label ="Baixar CV"/>
-      </>
-    );
-  }
+function Button(props) {
+  return (
+    <button
+      onClick={(event) => alert("A label desse botão é baixar CV", event)}
+    >
+      {props.label}
+    </button>
+  );
+}
+
+function App() {
+  return (
+    <div>
+      <TextUpperCase text="texto desafio 1 - base react" /> <hr />
+      <Button label="Baixar CV"/>
+    </div>
+  );
 }
 
 export default App;
